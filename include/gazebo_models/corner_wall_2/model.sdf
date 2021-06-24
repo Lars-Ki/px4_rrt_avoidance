@@ -1,0 +1,30 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="corner_wall_2">
+    <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <mass>100</mass>
+      </inertial>
+    <static>false</static>
+    <link name="link">
+
+      <collision name="collision_wall">
+        <geometry>
+          <mesh>
+          <uri>model://corner_wall_2/mashes/corner_wall_2.dae</uri>
+	   <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+          <uri>model://corner_wall_2/mashes/corner_wall_2.dae</uri>
+	   <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0</authoring_tool>
+    </contributor>
+    <created>2020-08-31T19:54:39</created>
+    <modified>2020-08-31T19:54:39</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_geometries>
+    <geometry id="Corner_Wall_2_1_-mesh" name="Corner Wall 2(1)">
+      <mesh>
+        <source id="Corner_Wall_2_1_-mesh-positions">
+          <float_array id="Corner_Wall_2_1_-mesh-positions-array" count="84">-5.1 10.2 0 -5.1 10.2 0.5 -5.1 10.4 0.5 -5.1 10.4 0 -3.2 10.2 0.5 -3.2 10.4 0.5 -0.1 10.2 0 -0.1 10.2 3.6 -0.1 10.4 3.6 -0.1 0 0 -0.1 0 25 -0.1 10.4 25 16.9 0 0 16.9 0 25 16.9 0.2 0 16.9 0.2 25 0.1 0.2 25 0.1 10.4 25 0.1 0.2 0 0.1 10.2 0 4.9 10.4 0 4.9 10.2 0 0.1 10.2 3.6 0.1 10.4 3.6 3.2 10.4 0.5 4.9 10.4 0.5 3.2 10.2 0.5 4.9 10.2 0.5</float_array>
+          <technique_common>
+            <accessor source="#Corner_Wall_2_1_-mesh-positions-array" count="28" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Corner_Wall_2_1_-mesh-normals">
+          <float_array id="Corner_Wall_2_1_-mesh-normals-array" count="75">-1 0 0 0 0 1 0 -1 0 0 -1 -1.52588e-6 -0.7071027 0 0.7071109 -0.7071092 0 0.7071043 -1 0 0 0 -1 0 0 -1 0 1 0 0 0 1 0 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 0 -1 0 1 -1.23055e-5 0 1 -3.84546e-7 0 1 4.76837e-6 0 -1 -3.17891e-6 0.7071027 0 0.7071109 0.7071092 0 0.7071043</float_array>
+          <technique_common>
+            <accessor source="#Corner_Wall_2_1_-mesh-normals-array" count="25" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Corner_Wall_2_1_-mesh-vertices">
+          <input semantic="POSITION" source="#Corner_Wall_2_1_-mesh-positions"/>
+        </vertices>
+        <triangles count="52">
+          <input semantic="VERTEX" source="#Corner_Wall_2_1_-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Corner_Wall_2_1_-mesh-normals" offset="1"/>
+          <p>0 0 1 0 2 0 2 0 3 0 0 0 4 1 5 1 2 1 2 1 1 1 4 1 4 2 1 2 0 2 0 3 6 3 4 3 6 2 7 2 4 2 7 4 8 4 5 4 5 5 4 5 7 5 7 6 6 6 9 6 9 0 10 0 7 0 8 0 7 0 10 0 10 0 11 0 8 0 10 7 9 7 12 7 12 8 13 8 10 8 13 9 12 9 14 9 14 9 15 9 13 9 16 1 17 1 11 1 11 1 10 1 16 1 15 1 16 1 10 1 10 1 13 1 15 1 15 10 14 10 18 10 18 10 16 10 15 10 19 11 3 11 20 11 20 12 21 12 19 12 6 13 0 13 3 13 3 14 19 14 6 14 9 15 6 15 19 15 19 16 18 16 9 16 12 17 9 17 18 17 18 18 14 18 12 18 22 9 23 9 17 9 17 9 16 9 22 9 19 9 22 9 16 9 16 9 18 9 19 9 8 10 11 10 17 10 17 10 23 10 8 10 23 19 5 19 8 19 5 20 23 20 24 20 24 10 25 10 20 10 20 10 3 10 24 10 5 21 24 21 3 21 3 10 2 10 5 10 26 2 22 2 19 2 26 22 19 22 21 22 21 2 27 2 26 2 26 23 24 23 23 23 23 24 22 24 26 24 27 1 25 1 24 1 24 1 26 1 27 1 21 9 20 9 25 9 25 9 27 9 21 9</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="Corner_Wall_2_1_" name="Corner_Wall_2_1_" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#Corner_Wall_2_1_-mesh" name="Corner_Wall_2_1_"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

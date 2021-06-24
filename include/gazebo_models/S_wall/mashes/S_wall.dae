@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.79.0</authoring_tool>
+    </contributor>
+    <created>2020-08-25T17:41:06</created>
+    <modified>2020-08-25T17:41:06</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images/>
+  <library_geometries>
+    <geometry id="S_Wall-mesh" name="S Wall">
+      <mesh>
+        <source id="S_Wall-mesh-positions">
+          <float_array id="S_Wall-mesh-positions-array" count="48">3.5 -0.1 0 3.5 -0.1 -25 3.5 4.1 -25 3.5 4.1 0 3.3 4.1 -25 3.3 4.1 0 3.3 0.1 -25 3.3 0.1 0 -8.5 0.1 -25 -8.5 0.1 0 -8.5 -5.1 -25 -8.5 -5.1 0 -8.300001 -0.1 -25 -8.300001 -5.1 -25 -8.300001 -5.1 0 -8.300001 -0.1 0</float_array>
+          <technique_common>
+            <accessor source="#S_Wall-mesh-positions-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="S_Wall-mesh-normals">
+          <float_array id="S_Wall-mesh-normals-array" count="21">1 0 0 0 1 0 -1 0 0 0 0 -1 1.81652e-5 0 -1 0 0 1 0 -1 0</float_array>
+          <technique_common>
+            <accessor source="#S_Wall-mesh-normals-array" count="7" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="S_Wall-mesh-vertices">
+          <input semantic="POSITION" source="#S_Wall-mesh-positions"/>
+        </vertices>
+        <triangles count="28">
+          <input semantic="VERTEX" source="#S_Wall-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#S_Wall-mesh-normals" offset="1"/>
+          <p>0 0 1 0 2 0 2 0 3 0 0 0 3 1 2 1 4 1 4 1 5 1 3 1 5 2 4 2 6 2 6 2 7 2 5 2 7 1 6 1 8 1 8 1 9 1 7 1 9 2 8 2 10 2 10 2 11 2 9 2 6 3 4 3 2 3 2 4 1 4 6 4 8 3 6 3 1 3 1 3 12 3 8 3 10 3 8 3 12 3 12 3 13 3 10 3 9 5 11 5 14 5 14 5 15 5 9 5 7 5 9 5 15 5 15 5 0 5 7 5 5 5 7 5 0 5 0 5 3 5 5 5 12 6 1 6 0 6 0 6 15 6 12 6 14 0 13 0 12 0 12 0 15 0 14 0 11 6 10 6 13 6 13 6 14 6 11 6</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers/>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="S_Wall" name="S_Wall" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 25 0 0 0 1</matrix>
+        <instance_geometry url="#S_Wall-mesh" name="S_Wall"/>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>

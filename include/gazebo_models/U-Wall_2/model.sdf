@@ -1,0 +1,26 @@
+<?xml version='1.0'?>
+<sdf version="1.4">
+  <model name="my_model">
+    <pose>0 0 0 0 0 0</pose>
+    <static>false</static>
+    <link name="link">
+
+      <collision name="U_Wall_col">
+        <geometry>
+          <mesh>
+          <uri>model://U-Wall_2/mashes/U-Wall_2.dae</uri>
+	   <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <mesh>
+          <uri>model://U-Wall_2/mashes/U-Wall_2.dae</uri>
+	   <scale>1 1 1</scale>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
