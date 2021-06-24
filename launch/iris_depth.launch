@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <!--  overwrite these args -->
+    <arg name="debug" default="false" />
+    <arg name="gui" default="true" />
+    <arg name="pause" default="false" /> 
+    <arg name="world" default="$(find px4_rrt_avoidance)/world/world_3.world" />
+    <arg name="fcu_url" default="udp://:14540@localhost:14557" />
+    <arg name="respawn_mavros" default="false"/>
+
+    <!-- empty world -->
+    <include file="$(find gazebo_ros)/launch/empty_world.launch" >
+	<arg name="gui" value="$(arg gui)" />
+  	<arg name="world_name" value="$(arg world)" />
+	<arg name="paused" value="$(arg pause)" />
+    </include>
+
+    <!-- MAVROS -->
+    <include file="$(find mavros)/launch/px4.launch">
+        <!-- GCS link is provided by SITL -->
+        <arg name="gcs_url" value=""/>
+        <arg name="fcu_url" value="$(arg fcu_url)"/>
+        <arg name="respawn_mavros" value="$(arg respawn_mavros)"/>
+    </include>
+    <include file="$(find px4)/launch/px4.launch">
+    </include>
+<node pkg="px4_rrt_avoidance" type="FC_pose_tf_publisher.py" name="px4_rrt_avoidance_tf" />
+<node pkg="px4_rrt_avoidance" type="dynamic_param_reconfigure.py" name="dynamic_parmater" />
+<node pkg="tf" type="static_transform_publisher" name="camera_static_tf" args="0.1 0 0.1 4.7123889 0 -1.5708  drone camera_depth_frame 100" />
+<node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+
+		<param name="resolution" value="0.5" />
+		
+		<!-- fixed map frame (set to 'map' if SLAM or localization running!) -->
+		<param name="frame_id" type="string" value="map" />
+		
+		<!-- maximum range to integrate (speedup!) -->
+		<param name="sensor_model/max_range" value="25.0" />
+		
+		<!-- data source to integrate (PointCloud2) -->
+		<remap from="cloud_in" to="/camera/depth/points" />
+		
+		<!-- ignores ground occupancy -->
+		<param name="occupancy_min_z" type="double" value="1.0" />
+		<param name="height_map" value="true" />
+		
+		<param name="display_voxel" value="true" />
+</node>
+<node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find px4_rrt_avoidance)/include/rviz_octomap.rviz" required="true"/>
+<node pkg="px4_rrt_avoidance" type="drone_in_local_map.py" name="drone_in_map" />
+<!--
+<node pkg="px4_rrt_avoidance" type="Master_node.py" name="Master" /> -->
+
+<node pkg="px4_rrt_avoidance" type="local_planner.py" name="local_planner" /> 
+
+
+<node pkg="px4_rrt_avoidance" type="local_map_publisher.py" name="local_map_publisher" /> 
+<node pkg="px4_rrt_avoidance" type="companion_computer.py" name="companion_checker" /> 
+</launch>
