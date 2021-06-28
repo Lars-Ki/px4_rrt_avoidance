@@ -1,4 +1,4 @@
-# Obstacle Avaoidance
+# Obstacle Avoidance
 ## Key features
 - This code uses the RRT*-algorithm for collision avoidance at a fixed altitude
 - 3D obstacle detection using the Intel D435 camera
