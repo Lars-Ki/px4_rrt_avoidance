@@ -6,6 +6,8 @@
 - paths smoothing
 - uses octomap for obstacle mapping
 
+![Collision avoidance](include/gif/collision-avoidance.gif)
+
 
 # Instructions
 ## Getting Started
