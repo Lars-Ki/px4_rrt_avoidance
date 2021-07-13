@@ -6,8 +6,14 @@
 - paths smoothing
 - uses octomap for obstacle mapping
 
+> **Note:** Collision prevention at a cruise velocity of 6 m/s.
+![Collision avoidance](include/gif/collision-prevention.gif)
+
+> **Note:** Collision avoidance at a cruise velocity of 6 m/s.
 ![Collision avoidance](include/gif/collision-avoidance.gif)
 
+Blue line: followed path
+Green line: alternative suggested path 
 
 # Instructions
 ## Getting Started
