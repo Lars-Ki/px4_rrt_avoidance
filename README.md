@@ -18,7 +18,7 @@ Green line: alternative suggested path
 # Instructions
 ## Getting Started
 See also: 
-- [research paper]( Empty ) NOT YET AVAILABLE
+- [Paper: Utilizing the RRT*-Algorithm for Collision Avoidance in UAV Photogrammetry Missions]( https://arxiv.org/abs/2108.03863 )
 - [Gazebo and ROS setup](https://docs.px4.io/master/en/simulation/ros_interface.html)
 
 ### Add to `.bashrc`: 
